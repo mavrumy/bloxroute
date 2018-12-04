@@ -47,7 +47,6 @@ class MessageHandler(object):
 
     def _enq(self):
         try:
-            sleep(1)
             item = self._message.to_json()
             self._queue.put_nowait(item)
             response = MessageResponse(MessageResponse.OK, "")
